@@ -1,10 +1,21 @@
 import { motion } from 'framer-motion';
 import { Github, ExternalLink, Heart, Twitter } from 'lucide-react';
 
+interface FooterLink {
+  name: string;
+  href: string;
+  external?: boolean;
+}
+
+interface FooterSection {
+  title: string;
+  links: FooterLink[];
+}
+
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
-  const footerLinks = [
+  const footerLinks: FooterSection[] = [
     {
       title: 'Resources',
       links: [
